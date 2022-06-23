@@ -19,7 +19,7 @@ abstract class UserDatabase : RoomDatabase() {
             if (temInstance != null){
                 return temInstance
             }
-            kotlin.synchronized(this){
+            synchronized(this){
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     UserDatabase::class.java,
